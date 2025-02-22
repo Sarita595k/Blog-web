@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Blog</title>
+</head>
+
+<body>
+    <h1>Welcome to AVSAR blogs.</h1>
+    <form action="/api/blogs/register" method="post">
+        <label for="blogName">Enter the title of your blog</label><br>
+        <input type="text" name="title" id="blogName" placeholder="enter your blog title"><br>
+        <label for="blogUsername">Enter your username</label><br>
+        <input type="text" name="username" id="blogUsername" placeholder="enter your username"><br>
+        <label for="blogDescription">Blog description</label><br>
+        <input type="text" name="description" id="blogDescription"><br>
+        <label for="blogImage">upload your blog image here</label><br>
+        <input type="file" name="blogPic" id="blogImage"><br>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
