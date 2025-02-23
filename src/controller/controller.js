@@ -4,7 +4,6 @@ const { fetchBlog, addBlogs } = require('../models/model')
 const allBlogs = (req, res) => {
     let data = req.body
     let response = fetchBlog()
-    console.log(response)
     return res.json(response)
 }
 
@@ -15,11 +14,12 @@ const getBlog = (req, res) => {
 
 // to add data to the blog
 const postBlog = (req, res) => {
-    const { title, username, description, blogPic } = req.body
-    console.log(req.body)
+    const { title, username, description } = req.body
+    const blogPic = req.file ? req.file.path : null
     const response = addBlogs({ title, username, description, blogPic })
     console.log(response)
     res.render('blogIs', { blog: response })
+
 }
 
 module.exports = { allBlogs, getBlog, postBlog }
