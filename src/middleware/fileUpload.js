@@ -5,11 +5,9 @@ const fs = require('fs')
 
 const filePath = path.join('uploads', 'blogImages')
 
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         const username = req.body.username
-        console.log(`username ${username}`)
         const blogPath = path.join(filePath, username)
         if (!fs.existsSync(blogPath)) {
             fs.mkdirSync(blogPath, { recursive: true })
@@ -26,7 +24,7 @@ const fileFilter = (req, file, cb) => {
     if (allowedTypes.includes(file.mimetype)) {
         return cb(null, true)
     }
-    cb(new Error("Please upload a file with filetype of jpg,jpeg, png and gif only"), false)
+    cb(null, false)
 }
 const upload = multer({ storage: storage, limits: { fileSize: 2 * 1024 * 1024 }, fileFilter: fileFilter })
 

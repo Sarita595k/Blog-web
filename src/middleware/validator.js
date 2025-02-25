@@ -9,9 +9,9 @@ const blogValidation = [
         if (!errors.isEmpty()) {
             return res.render('blog', { errors: errors.array() })
         }
-        // if (!req.file) {
-        //     return res.render('blog', { errors: 'blog Pic is required' })
-        // }
+        if (!req.file) {
+            return res.render('blog', { errors: [{ msg: 'blog Pic is required' }] })
+        }
         next()
     }
 ]

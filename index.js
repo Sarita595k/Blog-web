@@ -14,16 +14,19 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+app.use('/api/blogs', blogRoutes)
+
 app.use((err, req, res, next) => {
     if (err instanceof multer.MulterError) {
         if (err.code === 'LIMIT_FILE_SIZE') {
             return res.render('blog', { errors: [{ msg: "file size exceeds" }] })
         }
+
     }
     next(err);
 })
 
-app.use('/api/blogs', blogRoutes)
 
 app.listen(2100, () => {
     console.log("server is running")

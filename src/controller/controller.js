@@ -22,6 +22,7 @@ const postBlog = (req, res) => {
     }
     const blogPic = req.file ? req.file.path : null
     const response = addBlogs({ title, username, description, blogPic })
+    console.log(response)
 
     res.render('blogIs', { blog: response })
 }
