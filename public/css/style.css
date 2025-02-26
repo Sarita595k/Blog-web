@@ -1,5 +1,12 @@
+body {}
+
 #container {
     padding: 5% 10%;
-    background-color: black;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
     color: white;
+    display: flex;
+}
+
+    {
+    flex: 1;
 }
