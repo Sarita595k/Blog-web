@@ -1,12 +1,32 @@
-body {}
+body {
+    overflow-x: hidden;
+}
 
-#container {
+.container {
+    margin-top: 5%;
     padding: 5% 10%;
     background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
     color: white;
     display: flex;
+    gap: 10%;
 }
 
-    {
-    flex: 1;
+#form-container {
+    width: 100%;
+}
+
+form {
+    text-transform: capitalize;
+    padding-left: 5%;
+}
+
+
+#form-container form input {
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+#container-image img {
+    width: 100%;
+    height: 100%;
 }
